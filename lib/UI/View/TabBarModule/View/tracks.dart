@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:my_music/Utils/color_constants.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 import '../../../../Utils/common_style.dart';
 import '../../../../Utils/image_constants.dart';
 import '../../../../Utils/no_data_found.dart';
-import '../../../../Utils/string_constants.dart';
 import '../../../CustomWidgets/customIcon.dart';
 import '../../../CustomWidgets/custom_loading.dart';
 
-Widget tracks(BuildContext context, OnAudioQuery audioQueryTracks) {
+Widget tracks(BuildContext context, OnAudioQuery audioQueryTracks, AudioPlayer player) {
   final _streamController = StreamController<List<SongModel>>();
   return Padding(
     padding: EdgeInsets.only(top: 8),

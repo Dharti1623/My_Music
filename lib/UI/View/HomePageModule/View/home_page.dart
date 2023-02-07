@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+
 import '../../../../Utils/common_style.dart';
 import '../../../../Utils/string_constants.dart';
 import '../../../CustomWidgets/custom_appbar.dart';
@@ -25,10 +26,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final OnAudioQuery audioQueryEx = OnAudioQuery();
   late TabController tabController;
   var isBottomBarVisible = false .obs;
-  
+  final player = AudioPlayer();
+
   @override
-  void initState() {
+  Future<void> initState() async {
     tabController =  TabController(length: tabs.length, vsync: this, initialIndex: 2);
+    // final duration = await player.setUrl('https://foo.com/bar.mp3');
     super.initState();
   }
 
@@ -69,7 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   children: [
                     PlayLists(),
                     Favorites(),
-                    tracks(context, audioQueryEx),
+                    tracks(context, audioQueryEx,player),
                     Albums(),
                     Artists()
                   ]),
