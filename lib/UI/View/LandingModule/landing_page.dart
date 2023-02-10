@@ -24,39 +24,22 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   void initState() {
-    if (Platform.isAndroid) {
-      requestPermission();
-    } else {
-      Future.delayed(Duration(seconds: 3), () async {
-        Get.offAll(() => GetBuilder<GetXNetworkManager>(
-            builder: (builder) => networkManager.connectionType == 0
-                ? SomethingWentWrong()
-                : SafeArea(child: HomePage())));
-      });
-    }
-
-    /*Future.delayed(Duration(seconds: 3), () async {
-        Get.offAll(() =>
-            GetBuilder<GetXNetworkManager>(
-                builder: (builder) =>
-                networkManager.connectionType == 0
-                    ? SomethingWentWrong()
-                    : SafeArea(child: HomePage())
-            ));
-    });*/
+    requestPermission();
     super.initState();
   }
 
   requestPermission() async {
     // Web platform don't support permissions methods.
     if (!kIsWeb) {
-      bool permissionStatus = await audioQueryEx.permissionsStatus();
-      if (!permissionStatus) {
-        await audioQueryEx.permissionsRequest();
-        Get.offAll(() => GetBuilder<GetXNetworkManager>(
-            builder: (builder) => networkManager.connectionType == 0
-                ? SomethingWentWrong()
-                : SafeArea(child: HomePage())));
+      if (Platform.isAndroid) {
+        bool permissionStatus = await audioQueryEx.permissionsStatus();
+        if (!permissionStatus) {
+          await audioQueryEx.permissionsRequest();
+          Get.offAll(() => GetBuilder<GetXNetworkManager>(
+              builder: (builder) => networkManager.connectionType == 0
+                  ? SomethingWentWrong()
+                  : SafeArea(child: HomePage())));
+        }
       }
       Future.delayed(Duration(seconds: 3), () async {
         Get.offAll(() => GetBuilder<GetXNetworkManager>(
@@ -65,6 +48,12 @@ class _LandingPageState extends State<LandingPage> {
                 : SafeArea(child: HomePage())));
       });
     }
+    Future.delayed(Duration(seconds: 3), () async {
+      Get.offAll(() => GetBuilder<GetXNetworkManager>(
+          builder: (builder) => networkManager.connectionType == 0
+              ? SomethingWentWrong()
+              : SafeArea(child: HomePage())));
+    });
   }
 
   @override

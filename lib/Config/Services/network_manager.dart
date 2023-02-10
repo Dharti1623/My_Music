@@ -25,7 +25,7 @@ class GetXNetworkManager extends GetxController
     super.onInit();
   }
 
-  // a method to get which connection result, if you we connected to internet or no if yes then which network
+  // a method to get which connection result,we connected to the internet or not, if yes then which network
   Future<void>getConnectionType() async{
     var connectivityResult;
     try{

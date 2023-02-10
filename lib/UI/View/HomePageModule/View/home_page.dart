@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final player = AudioPlayer();
 
   @override
-  Future<void> initState() async {
+  void initState() {
     tabController =  TabController(length: tabs.length, vsync: this, initialIndex: 2);
     // final duration = await player.setUrl('https://foo.com/bar.mp3');
     super.initState();
