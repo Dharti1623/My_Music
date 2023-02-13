@@ -3,6 +3,6 @@ import 'package:my_music/Utils/color_constants.dart';
 
 Widget customLoading(){
   return Center(
-    child: CircularProgressIndicator(color: AppColor.bgPurple)
+    child: CircularProgressIndicator(color: AppColor.bgPurpleClr)
   );
 }

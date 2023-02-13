@@ -13,13 +13,13 @@ Widget customBottomNavigationBar(BuildContext context) {
   return Container(
     height: 77,
     decoration: BoxDecoration(
-        color: AppColor.bgWhite, borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
+        color: AppColor.bgWhiteClr, borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
     child: Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppColor.bottomBarPurple,
-              AppColor.bottomBarPink,
+              AppColor.bottomBarPurpleClr,
+              AppColor.bottomBarPinkClr,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -42,7 +42,7 @@ Widget customBottomNavigationBar(BuildContext context) {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(blurRadius: 8, /*spreadRadius: 4,*/
-                          color: AppColor.iconBlack,
+                          color: AppColor.iconBlackClr,
                           offset: Offset(2, 6))
                     ],
                   ),
@@ -82,11 +82,11 @@ Widget customBottomNavigationBar(BuildContext context) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                playControlIcon(context, backwardArrow, () => {
+                playControlIcon(context, backwardArrowImg, () => {
                 print("backwardArrow")
                 }),
-                playControlIcon(context, playArrow, () => {}),
-                playControlIcon(context, forwardArrow, () => {}),
+                playControlIcon(context, playArrowImg, () => {}),
+                playControlIcon(context, forwardArrowImg, () => {}),
               ],
             ),
           )

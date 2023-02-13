@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       // fallbackLocale: const Locale('en', 'US'),
       // home: HomePage(),
-      home: Container(decoration: screenBgColor,child: SafeArea(child: LandingPage())),
+      home: Container(decoration:screenBgColor,child: SafeArea(child: LandingPage())),
     );
   }
 }

@@ -5,6 +5,8 @@ import '../../../../Utils/common_style.dart';
 import '../../../../Utils/image_constants.dart';
 import '../../../../Utils/string_constants.dart';
 import '../../../CustomWidgets/customIcon.dart';
+import 'Tracks/View/track_divider.dart';
+import 'Tracks/View/track_title.dart';
 
 // ignore: must_be_immutable
 class Artists extends StatelessWidget {
@@ -41,7 +43,7 @@ class Artists extends StatelessWidget {
                                   child: Row(
                                     children: [
                                       tracksCircleAvtar(placeHolderImg),
-                                      tracksTitle(songTitleTxt,singerTxt),
+                                      TracksTitle(songTitleTxt,singerTxt),
                                     ],
                                   ),
                                 ),
@@ -53,12 +55,12 @@ class Artists extends StatelessWidget {
                                         },
                                         child: chkFav[index]
                                             ? customIcon(Icons.favorite,
-                                            AppColor.bgRed, 32)
+                                            AppColor.bgRedClr, 32)
                                             : customIcon(Icons.favorite,
-                                            AppColor.bgWhite, 32)),
+                                            AppColor.bgWhiteClr, 32)),
                                     IconButton(
                                       onPressed: () {},
-                                      icon: customIcon(Icons.more_vert_sharp,AppColor.iconBlack,32),
+                                      icon: customIcon(Icons.more_vert_sharp,AppColor.iconBlackClr,32),
                                     ),
                                   ],
                                 ),
@@ -108,7 +110,7 @@ Widget tracksCircleAvtar(avtarImg) {
   );
 }
 
-Widget tracksTitle(songTitleName,singerName){
+/*Widget tracksTitle(songTitleName,singerName){
   return Expanded(
     child: Padding(
       padding: EdgeInsets.only(
@@ -137,4 +139,4 @@ Widget tracksDivider(double lineThickNess) {
         color: AppColor.bgWhite,
         thickness: lineThickNess,
       ));
-}
+}*/

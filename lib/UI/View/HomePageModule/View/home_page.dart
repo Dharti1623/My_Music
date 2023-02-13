@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:my_music/Utils/color_constants.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 import '../../../../Utils/common_style.dart';
@@ -11,7 +12,7 @@ import '../../TabBarModule/View/albums.dart';
 import '../../TabBarModule/View/artists.dart';
 import '../../TabBarModule/View/favorites.dart';
 import '../../TabBarModule/View/playlists.dart';
-import '../../TabBarModule/View/tracks.dart';
+import '../../TabBarModule/View/Tracks/View/tracks.dart';
 
 final OnAudioQuery audioQueryEx = OnAudioQuery();
 
@@ -31,6 +32,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     tabController =  TabController(length: tabs.length, vsync: this, initialIndex: 2);
+    print("Dharti -->homepage");
     // final duration = await player.setUrl('https://foo.com/bar.mp3');
     super.initState();
   }
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Container(
             decoration: screenBgColor,
             child: Scaffold(
-              backgroundColor: Colors.transparent,
+              backgroundColor: AppColor.transparentClr,
               appBar: customAppBar(
                 context,
                 tabs,
@@ -72,7 +74,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   children: [
                     PlayLists(),
                     Favorites(),
-                    tracks(context, audioQueryEx,player),
+                    Tracks(audioQueryEx,player),
                     Albums(),
                     Artists()
                   ]),
@@ -87,6 +89,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ));
   }}
 
+/*
 Widget getAllSongs() {
   // final OnAudioQuery audioQueryEx = OnAudioQuery();
   return FutureBuilder<List<SongModel>>(
@@ -126,4 +129,4 @@ Widget getAllSongs() {
       );
     },
   );
-}
+}*/

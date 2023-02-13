@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as p;
 import 'dart:developer' as dev;
 

@@ -6,7 +6,7 @@ import 'string_constants.dart';
 
 // ignore: must_be_immutable
 class SomethingWentWrong extends StatefulWidget {
-  SomethingWentWrong({Key? key,}) : super(key: key);
+  const SomethingWentWrong({Key? key,}) : super(key: key);
   @override
   State<SomethingWentWrong> createState() => _SomethingWentWrongState();
 }
@@ -17,11 +17,11 @@ class _SomethingWentWrongState extends State<SomethingWentWrong> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColor.internetImage,
+        backgroundColor: AppColor.internetImageClr,
         body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Center(child: customImageContainer(noInternetImage,context,AppColor.internetImage)),
+            Center(child: customImageContainer(noInternetImage,context,AppColor.internetImageClr)),
             Center(child: customTextContainer(context,pleaseTryAgain)),
           ],
         ),

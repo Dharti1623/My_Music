@@ -22,7 +22,7 @@ class _NoDataFoundState extends State<NoDataFound> {
         body: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Center(child: customImageContainer(noAudioFound,context,AppColor.transparent)),
+            Center(child: customImageContainer(noAudioFoundImg,context,AppColor.transparentClr)),
             Center(child: customTextContainer(context,errorMessage)),
           ],
         ),

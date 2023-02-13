@@ -10,7 +10,7 @@ customAppBar(BuildContext context, tabs, addVisibility,TabController tabControll
         bottom: Radius.circular(18),
       ),
     ),
-    backgroundColor: AppColor.bgPink,
+    backgroundColor: AppColor.bgPinkClr,
     title: Padding(
       padding: const EdgeInsets.only(top: 50,bottom: 43),
       child: Image.asset(
@@ -24,7 +24,7 @@ customAppBar(BuildContext context, tabs, addVisibility,TabController tabControll
             onPressed: () {},
             icon: Icon(
               Icons.add_outlined,
-              color: AppColor.iconBlack,
+              color: AppColor.iconBlackClr,
               size: 42,
             )),
       ),
@@ -32,14 +32,14 @@ customAppBar(BuildContext context, tabs, addVisibility,TabController tabControll
           onPressed: () {},
           icon: Icon(
             Icons.search,
-            color: AppColor.iconBlack,
+            color: AppColor.iconBlackClr,
             size: 42,
           )),
       IconButton(
           onPressed: () {},
           icon: Icon(
             Icons.more_vert,
-            color: AppColor.iconBlack,
+            color: AppColor.iconBlackClr,
             size: 42,
           )),
     ],
@@ -50,20 +50,20 @@ customAppBar(BuildContext context, tabs, addVisibility,TabController tabControll
         child: TabBar(
           controller: tabController,
           isScrollable: true,
-          unselectedLabelColor: AppColor.tabBarPink,
+          unselectedLabelColor: AppColor.tabBarPinkClr,
           indicatorSize: TabBarIndicatorSize.tab,
           indicator: BoxDecoration(
-            border: Border.all(color: AppColor.bgPurple,strokeAlign: BorderSide.strokeAlignInside,style: BorderStyle.solid),
+            border: Border.all(color: AppColor.bgPurpleClr,strokeAlign: BorderSide.strokeAlignInside,style: BorderStyle.solid),
             boxShadow: [
               BoxShadow(
-                color:AppColor.bgPurple,
+                color:AppColor.bgPurpleClr,
                 blurRadius:9,
                 // spreadRadius: 5,
               ),
             ],
             borderRadius: BorderRadius.circular(57),
             gradient: LinearGradient(
-              colors: [AppColor.tabBarPink, AppColor.bgPurple],
+              colors: [AppColor.tabBarPinkClr, AppColor.bgPurpleClr],
               stops: [0.2, 1.0],
               tileMode: TileMode.repeated,
             ),
