@@ -4,7 +4,7 @@ import 'package:my_music/Utils/color_constants.dart';
 import '../../../../Utils/common_style.dart';
 import '../../../../Utils/image_constants.dart';
 import '../../../../Utils/string_constants.dart';
-import '../../../CustomWidgets/customIcon.dart';
+import '../../../CustomWidgets/custom_icon.dart';
 import 'Tracks/View/track_divider.dart';
 import 'Tracks/View/track_title.dart';
 
@@ -54,13 +54,13 @@ class Artists extends StatelessWidget {
                                           chkFav[index] = !chkFav[index];
                                         },
                                         child: chkFav[index]
-                                            ? customIcon(Icons.favorite,
-                                            AppColor.bgRedClr, 32)
-                                            : customIcon(Icons.favorite,
+                                            ? CustomIcon(Icons.favorite,
+                                            AppColor.bgHeartClr, 32)
+                                            : CustomIcon(Icons.favorite,
                                             AppColor.bgWhiteClr, 32)),
                                     IconButton(
                                       onPressed: () {},
-                                      icon: customIcon(Icons.more_vert_sharp,AppColor.iconBlackClr,32),
+                                      icon: CustomIcon(Icons.more_vert_sharp,AppColor.bgBlackClr,32),
                                     ),
                                   ],
                                 ),
@@ -92,7 +92,7 @@ Widget tracksCircleAvtar(avtarImg) {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-              blurRadius: 5, color: AppColor.shadowClr, offset: Offset(3, 5))
+              blurRadius: 5, color: AppColor.shadowBlackClr, offset: Offset(3, 5))
         ],
       ),
       child: CircleAvatar(

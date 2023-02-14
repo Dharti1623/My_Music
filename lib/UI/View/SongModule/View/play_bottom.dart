@@ -3,7 +3,7 @@ import 'package:my_music/Utils/image_constants.dart';
 
 import '../../../../Utils/color_constants.dart';
 import '../../../../Utils/common_style.dart';
-import '../../../CustomWidgets/customIcon.dart';
+import '../../../CustomWidgets/custom_icon.dart';
 
 
 class PlayBottom extends StatelessWidget {

@@ -11,6 +11,6 @@ Widget customTextErrorScreen(String text) {
     text,
     maxLines: 4,
     textAlign: TextAlign.center,
-    style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.w400,fontFamily: 'Pacifico',color:AppColor.iconBlackClr),
+    style: TextStyle(fontSize: 30.0,fontWeight: FontWeight.w400,fontFamily: 'Pacifico',color:AppColor.bgBlackClr),
   );
 }

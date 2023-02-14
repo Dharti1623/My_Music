@@ -42,7 +42,7 @@ Widget customBottomNavigationBar(BuildContext context) {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(blurRadius: 8, /*spreadRadius: 4,*/
-                          color: AppColor.iconBlackClr,
+                          color: AppColor.bgBlackClr,
                           offset: Offset(2, 6))
                     ],
                   ),

@@ -17,7 +17,7 @@ class TracksCircleAvtar extends StatelessWidget {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-                blurRadius: 5, color: AppColor.shadowClr, offset: const Offset(3, 5))
+                blurRadius: 5, color: AppColor.shadowBlackClr, offset: const Offset(3, 5))
           ],
         ),
         child: CircleAvatar(

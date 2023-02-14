@@ -6,7 +6,9 @@ import '../../../../../../Utils/common_style.dart';
 class TracksTitle extends StatelessWidget {
   String songTitleName;
   String? singerName;
-  TracksTitle(this.songTitleName,this.singerName, {Key? key}) : super(key: key);
+
+  TracksTitle(this.songTitleName, this.singerName, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +25,17 @@ class TracksTitle extends StatelessWidget {
             Text(
               songTitleName,
               style: trackTitleTxtStyle,
+              textAlign: TextAlign.center,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
-            Text(singerName!, style: trackSubTitleTxtStyle),
+            Text(
+              singerName!,
+              style: trackSubTitleTxtStyle,
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
           ],
         ),
       ),
