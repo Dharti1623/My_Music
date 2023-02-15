@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_music/UI/View/SongModule/View/play_bottom.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:just_audio/just_audio.dart';
+import 'package:audioplayers/audioplayers.dart';
 import '../../../../Utils/color_constants.dart';
 import '../../../../Utils/common_style.dart';
 import 'play_appbar.dart';
@@ -19,21 +20,28 @@ class PlaySong extends StatefulWidget {
 }
 
 class _PlaySongState extends State<PlaySong> {
-  final player = AudioPlayer();
-  assignDuration() async {
-    final player = AudioPlayer();
-    final duration = await player.setAsset(widget.songData.uri!);
-    player.play();
+  final player = AudioPlayer().obs;
+
+  setSource(AudioPlayer song) async {
+    await song.setSourceDeviceFile(widget.songData.data);
+  }
+  playSource(AudioPlayer song) async {
+    await song.play(DeviceFileSource(widget.songData.data));
+  }
+  stopPlay(AudioPlayer song) async {
+    await song.stop();
   }
   @override
   void initState() {
-    assignDuration();
-    print('init--->');
+    // final player = AudioPlayer().obs;
+    setSource(player.value);
+    playSource(player.value);
     super.initState();
   }
   @override
   void dispose() {
-    player.stop();
+    // setSource(player.value);
+    stopPlay(player.value);
     print('dispose--->');
     super.dispose();
   }

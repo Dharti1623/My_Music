@@ -28,3 +28,7 @@ const String artistsTxt = 'Artists';
 ///Tracks
 const String songTitleTxt = 'Song Title Song TitleSong TitleSong TitleSong TitleSong TitleSong TitleSong Title';
 const String singerTxt = 'Singer';
+
+
+///shared_preferences
+const String keyAudioData = "key_audio_data";

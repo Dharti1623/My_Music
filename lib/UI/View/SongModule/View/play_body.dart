@@ -30,7 +30,7 @@ class PlayBody extends StatelessWidget {
           PlaySongTitleData(songData.title, songData.artist!,isFavorite),
         /*  AudioProgressBar1(20,5),*/
 
-          Container(
+          /*Container(
             color: Colors.transparent,
             child: Center(
               child: WaveProgressBar(
@@ -45,7 +45,7 @@ class PlayBody extends StatelessWidget {
                 isVerticallyAnimated: false,
               ),
             ),
-          ),
+          ),*/
         ],
       ),
     );

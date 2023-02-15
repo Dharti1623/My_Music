@@ -2,13 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:just_audio/just_audio.dart';
+
 import 'package:my_music/UI/View/SongModule/View/play_song_main.dart';
 import 'package:my_music/Utils/color_constants.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../../../Utils/common_function.dart';
 import '../../../../../../Utils/image_constants.dart';
 import '../../../../../../Utils/no_data_found.dart';
+import '../../../../../../Utils/string_constants.dart';
 import '../../../../../CustomWidgets/custom_icon.dart';
 import '../../../../../CustomWidgets/custom_loading.dart';
 import 'track_divider.dart';
@@ -18,8 +21,9 @@ import 'tracks_circle_avtar.dart';
 // ignore: must_be_immutable
 class Tracks extends StatelessWidget {
   OnAudioQuery audioQueryTracks;
-  AudioPlayer player;
-  Tracks(this.audioQueryTracks, this.player, {Key? key}) : super(key: key);
+  RxBool isBottomBarVisible;
+  // AudioPlayer player;
+  Tracks(this.audioQueryTracks, this.isBottomBarVisible, /*this.player,*/ {Key? key}) : super(key: key);
   // final _streamController = StreamController<List<SongModel>>();
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,7 @@ class Tracks extends StatelessWidget {
                     onTap: () {
                       // print('id--->${item.data![index]}');
                       print(chkFav[index]);
+                      isBottomBarVisible.value = true;
                       Get.to(() => PlaySong(item.data![index],chkFav[index]));
                     },
                     child: Padding(

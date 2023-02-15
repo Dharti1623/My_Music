@@ -45,8 +45,9 @@ dependencies:
   on_audio_query: ^2.6.1
   audio_progress_bars: ^0.0.1
   wave_progress_bars: ^0.1.0
-  just_audio: ^0.9.31
   flutter_svg: ^2.0.1
+  audioplayers: ^3.0.1
+  shared_preferences: ^2.0.17
 
 
 

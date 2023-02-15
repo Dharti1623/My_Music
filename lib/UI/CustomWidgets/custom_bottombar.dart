@@ -8,90 +8,95 @@ import 'play_control_icon.dart';
 onBtnClick() {
 
 }
+class CustomBottomNavigationBar extends StatelessWidget {
+  const CustomBottomNavigationBar({Key? key}) : super(key: key);
 
-Widget customBottomNavigationBar(BuildContext context) {
-  return Container(
-    height: 77,
-    decoration: BoxDecoration(
-        color: AppColor.bgWhiteClr, borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
-    child: Container(
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      height: 77,
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              AppColor.bottomBarPurpleClr,
-              AppColor.bottomBarPinkClr,
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp,
-          ),
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
-      margin: EdgeInsets.only(top: 1,),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 8, bottom: 9, right: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    // color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(blurRadius: 8, /*spreadRadius: 4,*/
-                          color: AppColor.bgBlackClr,
-                          offset: Offset(2, 6))
-                    ],
-                  ),
-                  child: CircleAvatar(
-                    radius: 28,
-                    child: ClipOval(
-                      child: Image.asset(
-                        placeHolderImg,
-                        width: 56.0,
-                        height: 56.0,
-                        fit: BoxFit.fill,
+          color: AppColor.bgWhiteClr, borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                AppColor.bottomBarPurpleClr,
+                AppColor.bottomBarPinkClr,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp,
+            ),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(23),topRight: Radius.circular(23))),
+        margin: EdgeInsets.only(top: 1,),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 8, bottom: 9, right: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(blurRadius: 8, /*spreadRadius: 4,*/
+                            color: AppColor.bgBlackClr,
+                            offset: Offset(2, 6))
+                      ],
+                    ),
+                    child: CircleAvatar(
+                      radius: 28,
+                      child: ClipOval(
+                        child: Image.asset(
+                          placeHolderImg,
+                          width: 56.0,
+                          height: 56.0,
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 15,
-                  bottom: 15,
-                  // right: 10,
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 15,
+                    bottom: 15,
+                    // right: 10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Song Title',
+                          style: bottomBarTitleTxtStyle),
+                      Text('Singer',
+                          style: bottomBarSubTitleTxtStyle),
+                    ],
+                  ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Song Title',
-                        style: bottomBarTitleTxtStyle),
-                    Text('Singer',
-                        style: bottomBarSubTitleTxtStyle),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 22, bottom: 19),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playControlIcon(context, backwardArrowImg, () => {
-                print("backwardArrow")
-                }),
-                playControlIcon(context, playArrowImg, () => {}),
-                playControlIcon(context, forwardArrowImg, () => {}),
               ],
             ),
-          )
-        ],
+            Padding(
+              padding: EdgeInsets.only(top: 22, bottom: 19),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  playControlIcon(context, backwardArrowImg, () => {
+                    print("backwardArrow")
+                  }),
+                  playControlIcon(context, playArrowImg, () => {}),
+                  playControlIcon(context, forwardArrowImg, () => {}),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }

@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:on_audio_query/on_audio_query.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as p;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer' as dev;
 
 import 'image_constants.dart';
 import 'string_constants.dart';
+
+setSongDataSharedPref(SongModel audioData) async {
+  final prefs = await SharedPreferences.getInstance();
+  prefs.setString(keyAudioData,audioData.toString());
+}
+getSongDataSharedPref() async {
+  final prefs = await SharedPreferences.getInstance();
+  prefs.getStringList(keyAudioData);
+  return "hello";
+}
+
+
 
 void printWarning(String text) {
   dev.log('\x1B[33m$text\x1B[0m');

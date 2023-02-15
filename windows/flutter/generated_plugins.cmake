@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   audio_progress_bars
+  audioplayers_windows
   connectivity_plus
 )
 
