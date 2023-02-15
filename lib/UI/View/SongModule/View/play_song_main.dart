@@ -21,16 +21,20 @@ class PlaySong extends StatefulWidget {
 
 class _PlaySongState extends State<PlaySong> {
   final player = AudioPlayer().obs;
-
+  RxBool isSongPlay = false.obs;
   setSource(AudioPlayer song) async {
     await song.setSourceDeviceFile(widget.songData.data);
   }
   playSource(AudioPlayer song) async {
+    isSongPlay.value = true;
     await song.play(DeviceFileSource(widget.songData.data));
   }
   stopPlay(AudioPlayer song) async {
     await song.stop();
   }
+  // pausePlay(AudioPlayer song) async {
+  //   await song.pause();
+  // }
   @override
   void initState() {
     // final player = AudioPlayer().obs;
@@ -48,15 +52,20 @@ class _PlaySongState extends State<PlaySong> {
   @override
   Widget build(BuildContext context) {
     print('data--->${widget.songData}');
-    // print('isSongFavorite--->${widget.isSongFavorite}');
+    int songDuration = widget.songData.duration!;
+    double totalTimeHour = songDuration/1000/60/60;
+    double totalTimeMinute = songDuration/1000/60;
+    double totalTimeSecond = (totalTimeMinute-totalTimeMinute.round())*60;
+    double totalTime = ((totalTimeHour.round().toDouble() * 3600) + (totalTimeMinute.round().toDouble() * 60) + totalTimeSecond.round());
+    print('isSongFavorite----$songDuration-->${totalTimeHour.round().toDouble()} ::: ${totalTimeMinute.round().toDouble()} ::: ${totalTimeSecond.round().toDouble()}');
     return SafeArea(
       child: Container(
         decoration: playScreenBgColor,
         child: Scaffold(
           backgroundColor: AppColor.transparentClr,
           appBar: playAppbar(context),
-          body: PlayBody(widget.songData,widget.isSongFavorite),
-          bottomNavigationBar: PlayBottom(),
+          body: PlayBody(widget.songData,widget.isSongFavorite,totalTime),
+          bottomNavigationBar: PlayBottom(player.value,isSongPlay),
         ),
       ),
     );
