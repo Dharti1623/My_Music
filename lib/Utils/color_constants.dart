@@ -8,6 +8,7 @@ class AppColor{
   static const Color bgBlackClr =  Color(0xFF000000);
   static const Color backIconClr =  Color(0xFF231F20);
   static const Color tabBarPinkClr =  Color(0xFFFFABE1);
+  static const Color albumBorderClr =  Color(0xFFac749c);
   static const Color bottomBarPurpleClr =  Color(0xFFD097D6);
   static const Color bottomBarPinkClr =  Color(0xFFFCA9E5);
   static const Color internetImageClr =  Color(0xFFFCFCFF);

@@ -45,14 +45,17 @@ ButtonStyle btnStyle1 = ElevatedButton.styleFrom(
   padding: EdgeInsets.all(0),
 );
 
-TextStyle tabBarTxtStyle = const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400, fontFamily: 'Pacifico', color: Color(0xFFFFFFFF));
-TextStyle bottomBarTitleTxtStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
-TextStyle bottomBarSubTitleTxtStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
-TextStyle trackTitleTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
-TextStyle trackSubTitleTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle tabBarTxtStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400, fontFamily: 'Pacifico', color: AppColor.bgWhiteClr);
+const TextStyle bottomBarTitleTxtStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle bottomBarSubTitleTxtStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle trackTitleTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle trackSubTitleTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
 
-TextStyle playSongTitleTxtStyle = TextStyle(fontSize: 30.0, fontWeight: FontWeight.w400, fontFamily: 'Pacifico', color: AppColor.bgBlackClr);
-TextStyle playSongSingerTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
-TextStyle playSongFavTxtStyle = TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle playSongTitleTxtStyle = TextStyle(fontSize: 30.0, fontWeight: FontWeight.w400, fontFamily: 'Pacifico', color: AppColor.bgBlackClr);
+const TextStyle playSongSingerTxtStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle playSongFavTxtStyle = TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
 
-TextStyle wayOfMusicTxtStyle = TextStyle(fontSize: 30.0, fontFamily: 'Pacifico', color: AppColor.bgPurpleClr);
+const TextStyle wayOfMusicTxtStyle = TextStyle(fontSize: 30.0, fontFamily: 'Pacifico', color: AppColor.bgPurpleClr);
+
+const TextStyle albumTitleTxtStyle = TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700, fontFamily: 'Raleway', color: AppColor.bgBlackClr);
+const TextStyle albumTrackTxtStyle = TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, fontFamily: 'Raleway', color: AppColor.bgBlackClr);

@@ -7,10 +7,10 @@ import '../../../../Utils/common_style.dart';
 import '../../../../Utils/string_constants.dart';
 import '../../../CustomWidgets/custom_appbar.dart';
 import '../../../CustomWidgets/custom_bottombar.dart';
-import '../../TabBarModule/View/albums.dart';
-import '../../TabBarModule/View/artists.dart';
-import '../../TabBarModule/View/favorites.dart';
-import '../../TabBarModule/View/playlists.dart';
+import '../../TabBarModule/View/Albums/View/albums.dart';
+import '../../TabBarModule/View/Artists/View/artists.dart';
+import '../../TabBarModule/View/Favorites/View/favorites.dart';
+import '../../TabBarModule/View/Playlists/View/playlists.dart';
 import '../../TabBarModule/View/Tracks/View/tracks.dart';
 
 final OnAudioQuery audioQueryEx = OnAudioQuery();
@@ -25,14 +25,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final OnAudioQuery audioQueryEx = OnAudioQuery();
   late TabController tabController;
-  var isBottomBarVisible = false .obs;
+  var isBottomBarVisible = false.obs;
+
   // final player = AudioPlayer();
 
   @override
   void initState() {
-    tabController =  TabController(length: tabs.length, vsync: this, initialIndex: 2);
+    tabController =
+        TabController(length: tabs.length, vsync: this, initialIndex: 2);
     print("Dharti -->homepage");
-    // final duration = await player.setUrl('https://foo.com/bar.mp3');
     super.initState();
   }
 
@@ -43,11 +44,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   List<Tab> tabs = <Tab>[
-    Tab(child: Text(playlistsTxt, style: tabBarTxtStyle)),
-    Tab(child: Text(favoritesTxt, style: tabBarTxtStyle)),
-    Tab(child: Text(tracksTxt, style: tabBarTxtStyle)),
-    Tab(child: Text(albumsTxt, style: tabBarTxtStyle)),
-    Tab(child: Text(artistsTxt, style: tabBarTxtStyle)),
+    const Tab(child: Text(playlistsTxt, style: tabBarTxtStyle)),
+    const Tab(child: Text(favoritesTxt, style: tabBarTxtStyle)),
+    const Tab(child: Text(tracksTxt, style: tabBarTxtStyle)),
+    const Tab(child: Text(albumsTxt, style: tabBarTxtStyle)),
+    const Tab(child: Text(artistsTxt, style: tabBarTxtStyle)),
   ];
 
 // List<Widget> tabContent = [PlayLists(),Favorites(),Tracks(),Albums(),Artists()];
@@ -61,29 +62,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             decoration: screenBgColor,
             child: Scaffold(
               backgroundColor: AppColor.transparentClr,
-              appBar: customAppBar(
-                context,
-                tabs,
-                false,
-                tabController,
-              ),
+              appBar: customAppBar(context, tabs, false, tabController),
               body: TabBarView(
                   controller: tabController,
                   physics: BouncingScrollPhysics(),
                   children: [
-                    PlayLists(),
+                    PlayLists(audioQueryEx, isBottomBarVisible),
                     Favorites(),
-                    Tracks(audioQueryEx,isBottomBarVisible/*,player*/),
-                    Albums(),
-                    Artists()
+                    Tracks(audioQueryEx, isBottomBarVisible),
+                    Albums(audioQueryEx, isBottomBarVisible),
+                    Artists(audioQueryEx, isBottomBarVisible),
                   ]),
               bottomNavigationBar: Obx(
-                    () =>
-                isBottomBarVisible.value
-                    ? CustomBottomNavigationBar()
-                    : SizedBox(),
+                () => isBottomBarVisible.value
+                    ? const CustomBottomNavigationBar()
+                    : const SizedBox(),
               ),
             ),
           ),
         ));
-  }}
+  }
+}

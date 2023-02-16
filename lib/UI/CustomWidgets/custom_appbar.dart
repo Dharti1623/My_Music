@@ -47,7 +47,6 @@ customAppBar(
             moonColor: AppColor.bgWhitePinkClr,
             starsColor: AppColor.bgWhitePinkClr,
             cratersColor: AppColor.bgWhitePinkClr,
-
           )),
       IconButton(
           onPressed: () {},
