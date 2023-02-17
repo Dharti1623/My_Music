@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../Config/Services/network_manager.dart';
-import '../../../Utils/common_function.dart';
 import '../../../Utils/common_style.dart';
 import '../../../Utils/error_screen.dart';
 import '../../../Utils/image_constants.dart';
@@ -38,29 +37,25 @@ class _LandingPageState extends State<LandingPage> {
           await audioQueryEx.permissionsRequest();
           Get.offAll(() => GetBuilder<GetXNetworkManager>(
               builder: (builder) => networkManager.connectionType == 0
-                  ? SomethingWentWrong()
-                  : SafeArea(child: HomePage())));
+                  ? const SomethingWentWrong()
+                  : const SafeArea(child: HomePage())));
         }
-        // else{
-        //
-        // }
       }
-        Future.delayed(Duration(seconds: 3), () async {
+        Future.delayed(const Duration(seconds: 3), () async {
           Get.offAll(() => GetBuilder<GetXNetworkManager>(
               builder: (builder) => networkManager.connectionType == 0
-                  ? SomethingWentWrong()
-                  : SafeArea(child: HomePage())));
+                  ? const SomethingWentWrong()
+                  : const SafeArea(child: HomePage())));
         });
     }
     else{
-      Future.delayed(Duration(seconds: 3), () async {
+      Future.delayed(const Duration(seconds: 3), () async {
         Get.offAll(() => GetBuilder<GetXNetworkManager>(
             builder: (builder) => networkManager.connectionType == 0
-                ? SomethingWentWrong()
-                : SafeArea(child: HomePage())));
+                ? const SomethingWentWrong()
+                : const SafeArea(child: HomePage())));
       });
     }
-
   }
 
   @override
@@ -83,9 +78,7 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(child: Image.asset(volumeEffectImg)),
-                  Center(
-                    child: Text(wayOfMusic,textAlign: TextAlign.center,style: wayOfMusicTxtStyle),
-                  ),
+                  const Center(child: Text(wayOfMusic,textAlign: TextAlign.center,style: wayOfMusicTxtStyle)),
                 ],
               ),
             ],

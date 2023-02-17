@@ -6,7 +6,7 @@ import 'package:on_audio_query/on_audio_query.dart';
 import '../../../../Utils/common_style.dart';
 import '../../../../Utils/string_constants.dart';
 import '../../../CustomWidgets/custom_appbar.dart';
-import '../../../CustomWidgets/custom_bottombar.dart';
+import '../../../CustomWidgets/custom_bottomBar.dart';
 import '../../TabBarModule/View/Albums/View/albums.dart';
 import '../../TabBarModule/View/Artists/View/artists.dart';
 import '../../TabBarModule/View/Favorites/View/favorites.dart';
@@ -51,9 +51,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     const Tab(child: Text(artistsTxt, style: tabBarTxtStyle)),
   ];
 
-// List<Widget> tabContent = [PlayLists(),Favorites(),Tracks(),Albums(),Artists()];
   @override
   Widget build(BuildContext context) {
+    List<Widget> tabContent = [
+      PlayLists(audioQueryEx, isBottomBarVisible),
+      const Favorites(),
+      Tracks(audioQueryEx, isBottomBarVisible),
+      Albums(audioQueryEx, isBottomBarVisible),
+      Artists(audioQueryEx, isBottomBarVisible)
+    ];
     return DefaultTabController(
         initialIndex: 2,
         length: tabs.length,
@@ -65,14 +71,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               appBar: customAppBar(context, tabs, false, tabController),
               body: TabBarView(
                   controller: tabController,
-                  physics: BouncingScrollPhysics(),
-                  children: [
-                    PlayLists(audioQueryEx, isBottomBarVisible),
-                    Favorites(),
-                    Tracks(audioQueryEx, isBottomBarVisible),
-                    Albums(audioQueryEx, isBottomBarVisible),
-                    Artists(audioQueryEx, isBottomBarVisible),
-                  ]),
+                  physics: const BouncingScrollPhysics(),
+                  children: tabContent),
               bottomNavigationBar: Obx(
                 () => isBottomBarVisible.value
                     ? const CustomBottomNavigationBar()

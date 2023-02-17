@@ -46,7 +46,7 @@ class Albums extends StatelessWidget {
               children: List.generate(item.data!.length, (index) {
                 return InkWell(
                   onTap: () {
-                    print("Dharti--->album-->${item.data!}");
+                    print("album-->${item.data!}");
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
