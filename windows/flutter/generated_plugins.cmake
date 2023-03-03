@@ -6,6 +6,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   audio_progress_bars
   audioplayers_windows
   connectivity_plus
+  isar_flutter_libs
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

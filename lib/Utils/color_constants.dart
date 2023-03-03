@@ -5,6 +5,7 @@ class AppColor{
   static const Color bgWhitePinkClr =  Color(0xFFFFE6F7);
   static const Color bgWhiteClr =  Color(0xFFFFFFFF);
   static const Color bgPurpleClr =  Color(0xFF937DC2);
+  static const Color bgPurpleDarkClr =  Color(0xFF7356AF);
   static const Color bgBlackClr =  Color(0xFF000000);
   static const Color backIconClr =  Color(0xFF231F20);
   static const Color tabBarPinkClr =  Color(0xFFFFABE1);
